@@ -62,7 +62,8 @@ class Prince implements PrinceInterface
     {
         $this->app = $app;
 
-        $this->executable = env('PRINCE_EXECUTABLE_PATH') ? env('PRINCE_EXECUTABLE_PATH') : '/usr/bin/prince';
+        $env_executable_path = getenv('PRINCE_EXECUTABLE_PATH') ? getenv('PRINCE_EXECUTABLE_PATH') : env('PRINCE_EXECUTABLE_PATH');
+        $this->executable = !empty($env_executable_path) ? $env_executable_path : '/usr/bin/prince';
 
         $this->arguments = ' --server -i "html" --silent -';
 
