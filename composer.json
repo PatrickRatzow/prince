@@ -19,5 +19,15 @@
     "psr-4": {
       "Kodebyraaet\\Prince\\": "src/Kodebyraaet/Prince"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Kodebyraaet\\Prince\\PrinceServiceProvider"
+      ],
+      "aliases": {
+        "Prince": "Kodebyraaet\\Prince\\Facades\\Prince"
+      }
+    }
   }
 }
